@@ -19,8 +19,8 @@ require File.expand_path('../../../../../../test_helper', __FILE__)
 
 class IssuesPdfHelperTest < ActiveSupport::TestCase
   
-  #fixtures :users, :projects, :roles, :members, :member_roles,
-  #        :enabled_modules, :issues, :trackers, :enumerations
+  fixtures :users, :projects, :roles, :members, :member_roles,
+          :enabled_modules, :issues, :enumerations
 
   include Redmine::Export::PDF::IssuesPdfHelper
 
