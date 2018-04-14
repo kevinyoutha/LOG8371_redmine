@@ -1,0 +1,14 @@
+language: ruby
+cache: bundler
+rvm:
+  - "2.4"
+services:
+  - mysql
+env:
+  - DB=mysql
+script: 
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - ruby -Itest test/unit/lib/redmine/export/pdf/issues_pdf_test.rb
+before_script:
+  - mysql -e 'create database myapp_test'
